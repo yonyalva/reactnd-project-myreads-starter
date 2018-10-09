@@ -11,9 +11,9 @@ class home extends Component {
 			}
 		}
 		componentDidMount () {
-		BooksAPI.getAll().then((abooks) => {
-				console.log(abooks)
-				this.setState({books: abooks})
+		BooksAPI.getAll().then((allbooks) => {
+				console.log(allbooks)
+				this.setState({books: allbooks})
 			})
 		}
 

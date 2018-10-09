@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Book from '../components/book'
 
 class search extends Component {
 
@@ -21,7 +22,9 @@ class search extends Component {
               </div>
             </div>
             <div className="search-books-results">
-              <ol className="books-grid"></ol>
+              <ol className="books-grid">
+
+			  </ol>
             </div>
           </div>
 		)
