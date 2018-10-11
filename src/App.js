@@ -4,6 +4,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Home from './views/home'
 import Search from './views/search'
+import Book from './components/book'
 
 class BooksApp extends React.Component {
   state = {

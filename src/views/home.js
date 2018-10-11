@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Shelf from '../components/shelf'
+import Book from '../components/book'
 import * as BooksAPI from '../BooksAPI'
 
 class home extends Component {
@@ -16,6 +17,16 @@ class home extends Component {
 				this.setState({books: allbooks})
 			})
 		}
+		
+		changeShelf  = (book, shelf) => {
+			BooksAPI.update(book, shelf)
+			.then(resp => {
+			book.shelf = shelf;
+			this.setState(state => {
+			books: state.books.filter(i => i.id === book.id).concat({book})
+			})
+		})
+		}
 
 		render(){
 			return (
@@ -24,9 +35,9 @@ class home extends Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-			<Shelf title="Currently Reading" books={this.state.books.filter(a => a.shelf === "currentlyReading")}/>
-			<Shelf title="Want to Read" books={this.state.books.filter(a => a.shelf === "wantToRead")}/>
-			<Shelf title="Read" books={this.state.books.filter(a => a.shelf === "read")}/>
+			<Shelf changeShelf={this.changeShelf} title="Currently Reading" books={this.state.books.filter(a => a.shelf === "currentlyReading")}/>
+			<Shelf changeShelf={this.changeShelf} title="Want to Read" books={this.state.books.filter(a => a.shelf === "wantToRead")}/>
+			<Shelf changeShelf={this.changeShelf} title="Read" books={this.state.books.filter(a => a.shelf === "read")}/>
             </div>
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
