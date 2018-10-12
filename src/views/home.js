@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Shelf from '../components/shelf'
-import Book from '../components/book'
+import {Link} from 'react-router-dom'
 import * as BooksAPI from '../BooksAPI'
+import Shelf from '../components/shelf'
 
 class home extends Component {
 		
@@ -13,7 +13,6 @@ class home extends Component {
 		}
 		componentDidMount () {
 		BooksAPI.getAll().then((allbooks) => {
-				console.log(allbooks)
 				this.setState({books: allbooks})
 			})
 		}
@@ -22,9 +21,9 @@ class home extends Component {
 			BooksAPI.update(book, shelf)
 			.then(resp => {
 			book.shelf = shelf;
-			this.setState(state => {
-			books: state.books.filter(i => i.id === book.id).concat({book})
-			})
+			this.setState(s => ({
+			books: s.books.filter(i => i.id !== book.id).concat([book])
+			}))
 		})
 		}
 
@@ -40,7 +39,7 @@ class home extends Component {
 			<Shelf changeShelf={this.changeShelf} title="Read" books={this.state.books.filter(a => a.shelf === "read")}/>
             </div>
             <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+              <Link to={'/Search'}>Add a book</Link>
             </div>
           </div>
 		)
