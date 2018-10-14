@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import * as BooksAPI from '../BooksAPI'
-import Search from '../views/search'
 
 class book extends Component {
 		render(){
