@@ -18,7 +18,7 @@ To get started:
 
 * download-clone from:
 
- https://github.com/yonyalva/feedreader.git
+ https://github.com/yonyalva/reactnd-project-myreads-starter.git
 
 
 ## Important
