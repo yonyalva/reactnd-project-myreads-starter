@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [download-clone](#download-clone)
+* [Download-clone](#Download-clone)
 * [Important](#Important)
 
 ## Instructions
@@ -14,7 +14,7 @@ To get started:
 * start the development server with `npm start`
 
 
-## download-clone
+## Download-clone
 
 * download-clone from:
 
