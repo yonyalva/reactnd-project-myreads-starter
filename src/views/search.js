@@ -34,7 +34,10 @@ class search extends Component {
 				}
 				else {
 					res.forEach(b => {
-						let find = this.state.books.filter(Boo => Boo.id === b.id);
+						let found = this.state.books.filter(e => e.id === b.id);
+						if(found[0]) {
+							b.shelf = found[0].shelf;
+						}
 					})
 					return this.setState({results: res});
 				}
