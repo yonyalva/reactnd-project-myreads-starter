@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Download-clone](#Download-clone)
-* [Important](#Important)
+* [Download-Clone](#download-clone)
+* [Important](#important)
 
 ## Instructions
 
