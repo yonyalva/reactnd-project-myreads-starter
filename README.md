@@ -14,7 +14,7 @@ To get started:
 * start the development server with `npm start`
 
 
-## Download-clone
+## Download-Clone
 
 * download-clone from:
 
